@@ -1,0 +1,158 @@
+[project]
+name = "dagster-unity-catalog-polars"
+version = "0.1.0"
+description = "Polars Unity Catalog IO Managers for Dagster"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "dagster",
+    "databricks-sdk>=0.40.0",
+    "databricks-sql-connector>=3.7.0",
+    "polars",
+    "pydantic>=2.9.2",
+]
+authors = [
+    {name = "Gian Violi", email = "96206151+gfvioli@users.noreply.github.com"},
+    {name = "Ion Koutsouris", email = "15728914+ion-elgreco@users.noreply.github.com"},
+    {name = "Stefan Verbruggen", email = "27513235+sverbruggen@users.noreply.github.com"}
+]
+license = { file = "licenses/LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+keywords = ["dagster", "polars", "io manager", "databricks", "unity catalog"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.setuptools]
+packages = ["dagster_unity_catalog_polars"]
+
+[tool.pyright]
+
+typeCheckingMode = 'basic'
+reportUnknownMemberType   = false
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+]
+reportMissingImports = false
+pythonVersion =  "3.9"
+
+[tool.ruff]
+force-exclude = true
+lint.select = [
+    "E",
+    "F",
+    "W",
+    "N",
+    "D",
+    "UP",
+    "ANN",
+    "A",
+    "COM",
+    "C4",
+    "ICN",
+    "PT",
+    "SIM",
+    "ARG",
+    "TD",
+    "ERA",
+    "NPY",
+    "I",
+]
+
+lint.ignore = [
+    "D100",
+    "D104",
+    "D107",
+    "D203",
+    "D205",
+    "D206",
+    "D213",
+    "D400",
+    "D401",
+    "D413",
+    "D415",
+    "E501",
+    "E712",
+    "PT011",
+    "ANN002",
+    "ANN003",
+    "ANN101",
+    "ANN102",
+    "ANN204",
+    "C416",
+    "TD003",
+]
+
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+lint.fixable = ["ALL"]
+
+# Allow unused variables when underscore-prefixed.
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    ".ipynb",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+# Same as Black.
+line-length = 100
+
+# Assume Python 3.9
+target-version = "py310"
+
+[tool.ruff.lint.flake8-annotations]
+suppress-none-returning = true
+
+[tool.ruff.lint.per-file-ignores]
+"dagster_uc_polars_tests/*.py" = ["D100", "D103", "B018", "ANN001"]
+
+
+[tool.ruff.lint.pydocstyle]
+# Use Google-style docstrings.
+convention = "google"

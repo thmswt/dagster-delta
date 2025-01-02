@@ -28,6 +28,7 @@ requirements: .venv  ## Install/refresh all project requirements
 	uv pip install -r requirements.txt \
 		-e libraries/dagster-delta \
 		-e libraries/dagster-delta-polars \
+		-e libraries/dagster-unity-catalog-polars \
 		--config-settings editable_mode=compat
 		
 .PHONY: pre-commit

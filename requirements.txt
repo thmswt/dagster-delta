@@ -1,7 +1,11 @@
 ## build pckgs
-dagster
 polars
+dagster
 lakefs
+pydantic>=2
+pyarrow
+databricks-sdk
+databricks-sql-connector
 deltalake
 
 ## dev pckgs

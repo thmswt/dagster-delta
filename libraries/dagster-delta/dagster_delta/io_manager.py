@@ -137,7 +137,7 @@ class DeltaLakeIOManager(ConfigurableIOManagerFactory):
     """
 
     root_uri: str = Field(description="Storage location where Delta tables are stored.")
-    mode: WriteMode = Field(
+    mode: WriteMode = Field(  # type: ignore
         default=WriteMode.overwrite.value,
         description="The write mode passed to save the output.",
     )
@@ -145,7 +145,7 @@ class DeltaLakeIOManager(ConfigurableIOManagerFactory):
         default=None,
         description="If set to 'overwrite', allows replacing the schema of the table. Set to 'merge' to merge with existing schema.",
     )
-    writer_engine: WriterEngine = Field(
+    writer_engine: WriterEngine = Field(  # type: ignore
         default=WriterEngine.pyarrow.value,
         description="Engine passed to write_deltalake.",
     )
