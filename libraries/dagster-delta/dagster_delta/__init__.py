@@ -9,6 +9,9 @@ from .config import (
     ClientConfig as ClientConfig,
 )
 from .config import (
+    GcsConfig as GcsConfig,
+)
+from .config import (
     LocalConfig as LocalConfig,
 )
 from .config import (
