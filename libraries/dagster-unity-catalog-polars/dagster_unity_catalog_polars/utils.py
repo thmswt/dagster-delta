@@ -46,4 +46,8 @@ def read_uc_table(
     )
     cursor.execute(query)
 
-    return pl.DataFrame(cursor.fetchall_arrow())
+    df = pl.DataFrame(cursor.fetchall_arrow())
+
+    conn.close()
+
+    return df
